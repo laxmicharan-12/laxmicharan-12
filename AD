@@ -1,0 +1,480 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "812bd7c1-7fa2-4ba8-bded-7d40faffa3ca",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import seaborn as sns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "3490b815-f5fd-4cec-a076-dd961f091296",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['anagrams',\n",
+       " 'anscombe',\n",
+       " 'attention',\n",
+       " 'brain_networks',\n",
+       " 'car_crashes',\n",
+       " 'diamonds',\n",
+       " 'dots',\n",
+       " 'dowjones',\n",
+       " 'exercise',\n",
+       " 'flights',\n",
+       " 'fmri',\n",
+       " 'geyser',\n",
+       " 'glue',\n",
+       " 'healthexp',\n",
+       " 'iris',\n",
+       " 'mpg',\n",
+       " 'penguins',\n",
+       " 'planets',\n",
+       " 'seaice',\n",
+       " 'taxis',\n",
+       " 'tips',\n",
+       " 'titanic']"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "sns.get_dataset_names()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "929276f7-057f-4543-b33f-92e08f302841",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>year</th>\n",
+       "      <th>month</th>\n",
+       "      <th>passengers</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1949</td>\n",
+       "      <td>Jan</td>\n",
+       "      <td>112</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1949</td>\n",
+       "      <td>Feb</td>\n",
+       "      <td>118</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>1949</td>\n",
+       "      <td>Mar</td>\n",
+       "      <td>132</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>1949</td>\n",
+       "      <td>Apr</td>\n",
+       "      <td>129</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>1949</td>\n",
+       "      <td>May</td>\n",
+       "      <td>121</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>139</th>\n",
+       "      <td>1960</td>\n",
+       "      <td>Aug</td>\n",
+       "      <td>606</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>140</th>\n",
+       "      <td>1960</td>\n",
+       "      <td>Sep</td>\n",
+       "      <td>508</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>141</th>\n",
+       "      <td>1960</td>\n",
+       "      <td>Oct</td>\n",
+       "      <td>461</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>142</th>\n",
+       "      <td>1960</td>\n",
+       "      <td>Nov</td>\n",
+       "      <td>390</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>143</th>\n",
+       "      <td>1960</td>\n",
+       "      <td>Dec</td>\n",
+       "      <td>432</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>144 rows × 3 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "     year month  passengers\n",
+       "0    1949   Jan         112\n",
+       "1    1949   Feb         118\n",
+       "2    1949   Mar         132\n",
+       "3    1949   Apr         129\n",
+       "4    1949   May         121\n",
+       "..    ...   ...         ...\n",
+       "139  1960   Aug         606\n",
+       "140  1960   Sep         508\n",
+       "141  1960   Oct         461\n",
+       "142  1960   Nov         390\n",
+       "143  1960   Dec         432\n",
+       "\n",
+       "[144 rows x 3 columns]"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df=sns.load_dataset('flights')\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "2c8602ba-ad95-4782-816b-9b7feedb2c9a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>align</th>\n",
+       "      <th>choice</th>\n",
+       "      <th>time</th>\n",
+       "      <th>coherence</th>\n",
+       "      <th>firing_rate</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>dots</td>\n",
+       "      <td>T1</td>\n",
+       "      <td>-80</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td>33.189967</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>dots</td>\n",
+       "      <td>T1</td>\n",
+       "      <td>-80</td>\n",
+       "      <td>3.2</td>\n",
+       "      <td>31.691726</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>dots</td>\n",
+       "      <td>T1</td>\n",
+       "      <td>-80</td>\n",
+       "      <td>6.4</td>\n",
+       "      <td>34.279840</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>dots</td>\n",
+       "      <td>T1</td>\n",
+       "      <td>-80</td>\n",
+       "      <td>12.8</td>\n",
+       "      <td>32.631874</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>dots</td>\n",
+       "      <td>T1</td>\n",
+       "      <td>-80</td>\n",
+       "      <td>25.6</td>\n",
+       "      <td>35.060487</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>843</th>\n",
+       "      <td>sacc</td>\n",
+       "      <td>T2</td>\n",
+       "      <td>300</td>\n",
+       "      <td>3.2</td>\n",
+       "      <td>33.281734</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>844</th>\n",
+       "      <td>sacc</td>\n",
+       "      <td>T2</td>\n",
+       "      <td>300</td>\n",
+       "      <td>6.4</td>\n",
+       "      <td>27.583979</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>845</th>\n",
+       "      <td>sacc</td>\n",
+       "      <td>T2</td>\n",
+       "      <td>300</td>\n",
+       "      <td>12.8</td>\n",
+       "      <td>28.511530</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>846</th>\n",
+       "      <td>sacc</td>\n",
+       "      <td>T2</td>\n",
+       "      <td>300</td>\n",
+       "      <td>25.6</td>\n",
+       "      <td>27.009804</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>847</th>\n",
+       "      <td>sacc</td>\n",
+       "      <td>T2</td>\n",
+       "      <td>300</td>\n",
+       "      <td>51.2</td>\n",
+       "      <td>30.959302</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>848 rows × 5 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "    align choice  time  coherence  firing_rate\n",
+       "0    dots     T1   -80        0.0    33.189967\n",
+       "1    dots     T1   -80        3.2    31.691726\n",
+       "2    dots     T1   -80        6.4    34.279840\n",
+       "3    dots     T1   -80       12.8    32.631874\n",
+       "4    dots     T1   -80       25.6    35.060487\n",
+       "..    ...    ...   ...        ...          ...\n",
+       "843  sacc     T2   300        3.2    33.281734\n",
+       "844  sacc     T2   300        6.4    27.583979\n",
+       "845  sacc     T2   300       12.8    28.511530\n",
+       "846  sacc     T2   300       25.6    27.009804\n",
+       "847  sacc     T2   300       51.2    30.959302\n",
+       "\n",
+       "[848 rows x 5 columns]"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df=sns.load_dataset('dots')\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "a48b5b9a-bda0-4030-81ba-31e5239c665b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "pandas.core.frame.DataFrame"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "c9c5eefb-8ca3-4ae2-b92e-acc2fbd6740c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Index(['align', 'choice', 'time', 'coherence', 'firing_rate'], dtype='object')"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "db633ac8-f51f-4776-ba72-5a9b9f027b75",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<bound method Series.unique of 0      T1\n",
+       "1      T1\n",
+       "2      T1\n",
+       "3      T1\n",
+       "4      T1\n",
+       "       ..\n",
+       "843    T2\n",
+       "844    T2\n",
+       "845    T2\n",
+       "846    T2\n",
+       "847    T2\n",
+       "Name: choice, Length: 848, dtype: object>"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df['choice'].unique"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "d7e4be9a-92b5-495f-be0f-3c0879bc0992",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<bound method DataFrame.info of     align choice  time  coherence  firing_rate\n",
+       "0    dots     T1   -80        0.0    33.189967\n",
+       "1    dots     T1   -80        3.2    31.691726\n",
+       "2    dots     T1   -80        6.4    34.279840\n",
+       "3    dots     T1   -80       12.8    32.631874\n",
+       "4    dots     T1   -80       25.6    35.060487\n",
+       "..    ...    ...   ...        ...          ...\n",
+       "843  sacc     T2   300        3.2    33.281734\n",
+       "844  sacc     T2   300        6.4    27.583979\n",
+       "845  sacc     T2   300       12.8    28.511530\n",
+       "846  sacc     T2   300       25.6    27.009804\n",
+       "847  sacc     T2   300       51.2    30.959302\n",
+       "\n",
+       "[848 rows x 5 columns]>"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.info"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c2f0613d-fdc4-4771-bd5a-c64a07728d09",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
