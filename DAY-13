@@ -1,0 +1,162 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a57c3e44-cd49-421d-a00c-8568b946864e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "import pandas as pd\n",
+    "import seaborn as sns\n",
+    "import warnings\n",
+    "warnings.filterwarnings('ignore')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "7d528b15-8a06-4b25-9ca6-9d63f0d29fea",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'pd' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[13], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m df\u001b[38;5;241m=\u001b[39mpd\u001b[38;5;241m.\u001b[39mread_csv(\u001b[38;5;124mr\u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mC:\u001b[39m\u001b[38;5;124m\\\u001b[39m\u001b[38;5;124mUsers\u001b[39m\u001b[38;5;124m\\\u001b[39m\u001b[38;5;124mkosun\u001b[39m\u001b[38;5;124m\\\u001b[39m\u001b[38;5;124mOneDrive\u001b[39m\u001b[38;5;124m\\\u001b[39m\u001b[38;5;124mDesktop\u001b[39m\u001b[38;5;124m\\\u001b[39m\u001b[38;5;124mAD\u001b[39m\u001b[38;5;124m'\u001b[39m)\n\u001b[0;32m      2\u001b[0m df\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'pd' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "df=pd.read_csv(r'C:\\Users\\kosun\\OneDrive\\Desktop\\AD')\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "b81b34e5-c86a-44cb-82d0-3dba149a2484",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'sns' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[15], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m df\u001b[38;5;241m=\u001b[39msns\u001b[38;5;241m.\u001b[39mload_dataset(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mtaxis\u001b[39m\u001b[38;5;124m'\u001b[39m)\n\u001b[0;32m      2\u001b[0m df\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'sns' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "df=sns.load_dataset('taxis')\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "18f2189e-17f1-4532-b00d-b126d115968a",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'sns' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[19], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m sns\u001b[38;5;241m.\u001b[39mhistplot(x\u001b[38;5;241m=\u001b[39mdf[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mfare\u001b[39m\u001b[38;5;124m'\u001b[39m],color\u001b[38;5;241m=\u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mblue\u001b[39m\u001b[38;5;124m'\u001b[39m)\n\u001b[0;32m      2\u001b[0m plt\u001b[38;5;241m.\u001b[39mshow()\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'sns' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "sns.histplot(x=df['fare'],color='blue')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "7cb52c82-6458-4e9b-ae51-6ae65d02c392",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'sns' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[21], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m iris_data\u001b[38;5;241m=\u001b[39msns\u001b[38;5;241m.\u001b[39mload_dataset(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124miris\u001b[39m\u001b[38;5;124m'\u001b[39m)\n\u001b[0;32m      2\u001b[0m iris_data\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'sns' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "iris_data=sns.load_dataset('iris')\n",
+    "iris_data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "d2e41421-3be1-425b-8087-b0bb3007a6c8",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid decimal literal (1652065771.py, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  Cell \u001b[1;32mIn[25], line 1\u001b[1;36m\u001b[0m\n\u001b[1;33m    lower_bound= q1-1,5iqr\u001b[0m\n\u001b[1;37m                      ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid decimal literal\n"
+     ]
+    }
+   ],
+   "source": [
+    "lower_bound= q1-1,5iqr\n",
+    "\n",
+    "upper_bound= q3+1,5iqr\n",
+    "\n",
+    "iqr=q3-q1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fa57dfed-ba26-47f1-add8-f0e90684310f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
